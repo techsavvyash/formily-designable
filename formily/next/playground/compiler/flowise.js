@@ -1,6 +1,9 @@
 // import * as fs from 'fs'
+// import * as fs from 'browserify-fs'
 // import * as path from 'path'
 import { INPUT_FIELD_TYPES } from './fieldTypes'
+
+import validations from './valid'
 // import * as startNode from './startNode.json'
 
 const startNode = {
@@ -57,23 +60,27 @@ function AskQuestion(description) {
 
 function GetInput(title, validation) {
   let validationCode = ''
-  // if (validation !== 'none') {
-  //   const validationPath = path.resolve(__dirname, 'validations.js')
-  //   // console.log('Resolved validation file path:', validationPath)
+  if (validation !== 'none') {
+    // const validationPath = path.resolve(__dirname, 'validations.js')
 
-  //   // const cwd = process.cwd()
-  //   // console.log('Current working directory:', cwd)
-
-  //   try {
-  //     const validationFile = fs.readFileSync(validationPath, 'utf8')
-  //     validationCode =
-  //       validationFile +
-  //       `if(!validator["${validation}"](msg.payload.text)) throw new Error('Wrong input, Please Retype');\n`
-  //   } catch (err) {
-  //     console.error('Error reading validation file:', err)
-  //     throw err
-  //   }
-  // }
+    try {
+      // let validationFile = null;
+      // fs.readFile(validationPath, 'utf8', (err, data) => {
+      //   if (err) {
+      //     console.error('Error reading validation file:', err)
+      //     throw err
+      //   }
+      //   validationFile = data;
+      // })
+      validationCode =
+        validations +
+        // validationFile +
+        `if(!validator["${validation}"](msg.payload.text)) throw new Error('Wrong input, Please Retype');\n`
+    } catch (err) {
+      console.error('Error reading validation file:', err)
+      throw err
+    }
+  }
   const s1 = `let formInput = msg.transformer.metaData.formInput;\n`
   const s2 = `if(formInput){\n`
   const s3 = `formInput = {...formInput, \"${title}\": msg.payload.text};\n`
