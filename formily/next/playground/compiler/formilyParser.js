@@ -19,6 +19,15 @@ class FieldParsers {
   // SELECT FIELD PARSER
   static Select(fieldDetail) {
     const title = fieldDetail['title'].replace(/\s/g, '')
+    if (!fieldDetail['enum']) {
+      return {
+        title,
+        component: 'Select',
+        description: fieldDetail['description'] || 'Description not provided',
+        validation: 'none',
+        options: [],
+      }
+    }
     return {
       title,
       component: 'Select',
