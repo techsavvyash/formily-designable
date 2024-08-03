@@ -1,0 +1,277 @@
+{
+  "form": {
+    "labelCol": 6,
+    "wrapperCol": 12
+  },
+  "schema": {
+    "type": "object",
+    "properties": {
+      "Class": {
+        "title": "Class",
+        "x-decorator": "FormItem",
+        "x-component": "Select",
+        "x-validator": [],
+        "x-component-props": {},
+        "x-decorator-props": {},
+        "enum": [
+          {
+            "children": [],
+            "label": "Class 1",
+            "value": "Class 1"
+          },
+          {
+            "children": [],
+            "label": "Class 2",
+            "value": "Class 2"
+          },
+          {
+            "children": [],
+            "label": "Class 11",
+            "value": "Class 11"
+          },
+          {
+            "children": [],
+            "label": "Class 12",
+            "value": "Class 12"
+          }
+        ],
+        "name": "Class",
+        "description": "Enter the class you are in",
+        "x-designable-id": "pp1e2szcvnx",
+        "x-index": 0
+      },
+      "Stream": {
+        "title": "Higher Secondary Stream",
+        "x-decorator": "FormItem",
+        "x-component": "Select",
+        "x-validator": [],
+        "x-component-props": {},
+        "x-decorator-props": {},
+        "name": "Stream",
+        "description": "Enter your stream for higher secondary education",
+        "x-reactions": {
+          "dependencies": [
+            {
+              "property": "value",
+              "type": "any",
+              "source": "Class",
+              "name": "Class"
+            }
+          ],
+          "fulfill": {
+            "state": {
+              "visible": "{{$deps.Class === 'Class 11' || $deps.Class === 'Class 12'}}"
+            }
+          }
+        },
+        "enum": [
+          {
+            "children": [],
+            "label": "Non-Medical",
+            "value": "Non-Medical"
+          },
+          {
+            "children": [],
+            "label": "Medical",
+            "value": "Medical"
+          }
+        ],
+        "x-designable-id": "pi8pqj81pm0",
+        "x-index": 1
+      },
+      "class_1_marks": {
+        "type": "string",
+        "title": "Marks",
+        "x-decorator": "FormItem",
+        "x-component": "Input",
+        "x-validator": ["llm"],
+        "x-component-props": {},
+        "x-decorator-props": {},
+        "name": "class_1_marks",
+        "description": "Enter the marks you got in class 1",
+        "x-reactions": {
+          "dependencies": [
+            {
+              "property": "value",
+              "type": "any",
+              "source": "Class",
+              "name": "Class"
+            }
+          ],
+          "fulfill": {
+            "state": {
+              "visible": "{{$deps.Class === 'Class 1'}}"
+            }
+          }
+        },
+        "x-designable-id": "nbea4vxxvjo",
+        "x-index": 2
+      },
+      "class_2_marks": {
+        "type": "string",
+        "title": "Marks",
+        "x-decorator": "FormItem",
+        "x-component": "Input",
+        "x-validator": "number",
+        "x-component-props": {},
+        "x-decorator-props": {},
+        "name": "class_2_marks",
+        "description": "Enter the marks you got in class 2",
+        "x-reactions": {
+          "dependencies": [
+            {
+              "property": "value",
+              "type": "any",
+              "source": "Class",
+              "name": "Class"
+            }
+          ],
+          "fulfill": {
+            "state": {
+              "visible": "{{$deps.Class === 'Class 2'}}"
+            }
+          }
+        },
+        "x-designable-id": "2tmrhrg5x02",
+        "x-index": 3
+      },
+      "class_11_non_med_marks": {
+        "type": "string",
+        "title": "Non Medical Marks",
+        "x-decorator": "FormItem",
+        "x-component": "Input",
+        "x-validator": "number",
+        "x-component-props": {},
+        "x-decorator-props": {},
+        "name": "class_11_non_med_marks",
+        "description": "Enter the marks you got in class 11",
+        "x-reactions": {
+          "dependencies": [
+            {
+              "property": "value",
+              "type": "any",
+              "source": "Class",
+              "name": "Class"
+            },
+            {
+              "property": "value",
+              "type": "any",
+              "source": "Stream",
+              "name": "Stream"
+            }
+          ],
+          "fulfill": {
+            "state": {
+              "visible": "{{$deps.Class === 'Class 11' && $deps.Stream === 'Non-Medical'}}"
+            }
+          }
+        },
+        "x-designable-id": "f3qj3c1yit9",
+        "x-index": 4
+      },
+      "class_11_med_marks": {
+        "type": "string",
+        "title": "Medical Marks",
+        "x-decorator": "FormItem",
+        "x-component": "Input",
+        "x-validator": "number",
+        "x-component-props": {},
+        "x-decorator-props": {},
+        "name": "class_11_med_marks",
+        "description": "Enter the marks you got in class 11",
+        "x-reactions": {
+          "dependencies": [
+            {
+              "property": "value",
+              "type": "any",
+              "source": "Class",
+              "name": "Class"
+            },
+            {
+              "property": "value",
+              "type": "any",
+              "source": "Stream",
+              "name": "Stream"
+            }
+          ],
+          "fulfill": {
+            "state": {
+              "visible": "{{$deps.Class === 'Class 11' && $deps.Stream === 'Medical'}}"
+            }
+          }
+        },
+        "x-designable-id": "uoilu8ahcrp",
+        "x-index": 5
+      },
+      "class_12_non_med_marks": {
+        "type": "string",
+        "title": "Non Medical Marks",
+        "x-decorator": "FormItem",
+        "x-component": "Input",
+        "x-validator": ["llm", "number"],
+        "x-component-props": {},
+        "x-decorator-props": {},
+        "name": "class_12_non_med_marks",
+        "description": "Enter the non-medical marks you got in class 12",
+        "x-reactions": {
+          "dependencies": [
+            {
+              "property": "value",
+              "type": "any",
+              "source": "Class",
+              "name": "Class"
+            },
+            {
+              "property": "value",
+              "type": "any",
+              "source": "Stream",
+              "name": "Stream"
+            }
+          ],
+          "fulfill": {
+            "state": {
+              "visible": "{{$deps.Class === 'Class 12' && $deps.Stream === 'Non-Medical'}}"
+            }
+          }
+        },
+        "x-designable-id": "dn2g0ix47vr",
+        "x-index": 6
+      },
+      "class_12_med_marks": {
+        "type": "string",
+        "title": "Medical Marks",
+        "x-decorator": "FormItem",
+        "x-component": "Input",
+        "x-validator": ["llm", "number"],
+        "x-component-props": {},
+        "x-decorator-props": {},
+        "name": "class_12_med_marks",
+        "description": "Enter the medical marks you got in class 11",
+        "x-reactions": {
+          "dependencies": [
+            {
+              "property": "value",
+              "type": "any",
+              "source": "Class",
+              "name": "Class"
+            },
+            {
+              "property": "value",
+              "type": "any",
+              "source": "Stream",
+              "name": "Stream"
+            }
+          ],
+          "fulfill": {
+            "state": {
+              "visible": "{{$deps.Class === 'Class 12' && $deps.Stream === 'Medical'}}"
+            }
+          }
+        },
+        "x-designable-id": "kwbvzwntpb2",
+        "x-index": 7
+      }
+    },
+    "x-designable-id": "tcy3a88c18k"
+  }
+}

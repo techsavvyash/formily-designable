@@ -18,7 +18,8 @@ function getTitleFromDependency(dependency, formilyJSON) {
   const titles = {}
   dependency.forEach((dep) => {
     const source = dep['source']
-    const title = formilyJSON[source]['title'].replace(/\s/g, '')
+    // const title = formilyJSON[source]['title'].replace(/\s/g, '')
+    const title = source.replace(/\s/g, '')
     const name = dep['name']
     titles[name] = title
   })
@@ -64,37 +65,67 @@ class FieldParsers {
     // "{{$deps.v_ef781vv5r3v == \"I1\"\r\n&&\r\n$deps.v_9bdqtfzwmd7 == \"Class 1\"}}"
     if (!fieldDetail['x-reactions']) return true
     if (fieldDetail['x-reactions'] == {}) return true
+    if (fieldDetail['x-reactions']['fulfill'] == {}) return true
+    if (fieldDetail['x-reactions']['fulfill']['state'] == {}) return true
+    if (fieldDetail['x-reactions']['fulfill']['state']['visible'] == {})
+      return true
     const dependencies = fieldDetail['x-reactions']['dependencies']
     const visibleCode = extractInnerString(
       fieldDetail['x-reactions']['fulfill']['state']['visible']
     )
     // "$deps.v_ef781vv5r3v == \"I1\"\r\n&&\r\n$deps.v_9bdqtfzwmd7 == \"Class 1\""
     const titles = getTitleFromDependency(dependencies, this.formilyJSON)
+    if (!visibleCode) return true
+    if (!titles) return true
     const reactions = replaceDepsWithFormInput(visibleCode, titles)
     return reactions
   }
 
+  // VALIDATION PARSER:
+  // Parses the 'x-validator' field in the JSON schema
+  // Return Type: An array of validation functions
+  validationParser(validations) {
+    const validationArray = []
+    if (typeof validations === 'string') {
+      validationArray.push(validations)
+      return validationArray
+    }
+    return validations.length != 0 ? validations : validationArray
+  }
+
   // INPUT FIELD PARSER
   Input(fieldDetail) {
-    const title = fieldDetail['title'].replace(/\s/g, '') // mustn't have spaces
+    let title
+    if (fieldDetail['name']) {
+      title = fieldDetail['name'].replace(/\s/g, '')
+    } else {
+      title = fieldDetail['x-designable-id']
+    }
+    // const title = fieldDetail['title'].replace(/\s/g, '') // mustn't have spaces
     const display = this.displayParser(fieldDetail)
     const reactions = this.reactionsParser(fieldDetail)
     return {
       title,
       component: 'Input',
       description: fieldDetail['description'] || 'Description not provided',
-      validation:
-        fieldDetail['x-validator'].length != 0
-          ? fieldDetail['x-validator']
-          : 'none',
+      validation: fieldDetail['x-validator']
+        ? this.validationParser(fieldDetail['x-validator'])
+        : [],
       display,
       reactions,
+      required: fieldDetail['required'] || false,
     }
   }
 
   // SELECT FIELD PARSER
   Select(fieldDetail) {
-    const title = fieldDetail['title'].replace(/\s/g, '')
+    let title
+    if (fieldDetail['name']) {
+      title = fieldDetail['name'].replace(/\s/g, '')
+    } else {
+      title = fieldDetail['x-designable-id']
+    }
+    // const title = fieldDetail['title'].replace(/\s/g, '')
     const display = this.displayParser(fieldDetail)
     const reactions = this.reactionsParser(fieldDetail)
     if (!fieldDetail['enum']) {
@@ -102,17 +133,18 @@ class FieldParsers {
         title,
         component: 'Select',
         description: fieldDetail['description'] || 'Description not provided',
-        validation: 'none',
+        validation: [],
         options: [],
         display,
         reactions,
+        required: fieldDetail['required'] || false,
       }
     }
     return {
       title,
       component: 'Select',
       description: fieldDetail['description'] || 'Description not provided',
-      validation: 'none',
+      validation: [],
       options: fieldDetail['enum'].map((option, index) => {
         return {
           key: option['value'],
@@ -123,6 +155,7 @@ class FieldParsers {
       }),
       display,
       reactions,
+      required: fieldDetail['required'] || false,
     }
   }
 
@@ -152,8 +185,9 @@ class FieldParsers {
           title: 'Error',
           component: 'Error',
           description: 'Component not found',
-          validation: 'none',
+          validation: [],
           display: false,
+          required: false,
         }
     }
     return parsedObject
