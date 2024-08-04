@@ -1,0 +1,46 @@
+{
+  "form": {
+    "labelCol": 6,
+    "wrapperCol": 12
+  },
+  "schema": {
+    "type": "object",
+    "properties": {
+      "1joor8luiey": {
+        "title": "Select",
+        "x-decorator": "FormItem",
+        "x-component": "Select",
+        "x-validator": [],
+        "x-component-props": {},
+        "x-decorator-props": {},
+        "x-designable-id": "1joor8luiey",
+        "x-index": 0,
+        "enum": [
+          {
+            "children": [],
+            "label": "Item 1 label",
+            "value": "Item 1 value"
+          },
+          {
+            "children": [],
+            "label": "Item 2 label",
+            "value": "Item 2 value"
+          }
+        ]
+      },
+      "q6u4jakp0kb": {
+        "type": "string",
+        "title": "Hello",
+        "x-decorator": "FormItem",
+        "x-component": "Input",
+        "x-validator": "number",
+        "x-component-props": {},
+        "x-decorator-props": {},
+        "description": "Say Hello",
+        "x-designable-id": "q6u4jakp0kb",
+        "x-index": 1
+      }
+    },
+    "x-designable-id": "gxdi68wcx7b"
+  }
+}

@@ -119,24 +119,24 @@ const App = () => {
               title="sources.Inputs"
               sources={[
                 Input,
-                Password,
-                NumberPicker,
-                Rating,
-                Range,
+                // Password,
+                // NumberPicker,
+                // Rating,
+                // Range,
                 Select,
-                TreeSelect,
-                Cascader,
-                Transfer,
-                Checkbox,
-                Radio,
-                DatePicker,
-                TimePicker,
+                // TreeSelect,
+                // Cascader,
+                // Transfer,
+                // Checkbox,
+                // Radio,
+                // DatePicker,
+                // TimePicker,
                 Upload,
-                Switch,
-                ObjectContainer,
+                // Switch,
+                // ObjectContainer,
               ]}
             />
-            <ResourceWidget
+            {/* {<ResourceWidget
               title="sources.Layouts"
               sources={[
                 Card,
@@ -146,12 +146,12 @@ const App = () => {
                 FormCollapse,
                 Space,
               ]}
-            />
-            <ResourceWidget
+            />} */}
+            {/* {<ResourceWidget
               title="sources.Arrays"
               sources={[ArrayCards, ArrayTable]}
-            />
-            <ResourceWidget title="sources.Displays" sources={[Text]} />
+            />} */}
+            {/* <ResourceWidget title="sources.Displays" sources={[Text]} /> */}
           </CompositePanel.Item>
           <CompositePanel.Item title="panels.OutlinedTree" icon="Outline">
             <OutlineTreeWidget />

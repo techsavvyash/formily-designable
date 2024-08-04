@@ -1,0 +1,326 @@
+{
+    "form": {
+      "labelCol": 6,
+      "wrapperCol": 12
+    },
+    "schema": {
+      "type": "object",
+      "properties": {
+        "tyfwvblhg64": {
+          "type": "string",
+          "title": "Name",
+          "x-decorator": "FormItem",
+          "x-component": "Input",
+          "x-validator": "llm",
+          "x-component-props": {},
+          "x-decorator-props": {},
+          "x-designable-id": "tyfwvblhg64",
+          "x-index": 0,
+          "description": "Write your name",
+          "required": true
+        },
+        "094o0w7p3pd": {
+          "type": "string",
+          "title": "Email",
+          "x-decorator": "FormItem",
+          "x-component": "Input",
+          "x-validator": "email",
+          "x-component-props": {},
+          "x-decorator-props": {},
+          "description": "Enter your email.",
+          "required": true,
+          "x-designable-id": "094o0w7p3pd",
+          "x-index": 1
+        },
+        "ogk0sxxy1kl": {
+          "type": "string",
+          "title": "Phone Number",
+          "x-decorator": "FormItem",
+          "x-component": "Input",
+          "x-validator": "phone",
+          "x-component-props": {},
+          "x-decorator-props": {},
+          "description": "Write your Phone Number",
+          "required": true,
+          "x-designable-id": "ogk0sxxy1kl",
+          "x-index": 2
+        },
+        "mlhkqa71bp3": {
+          "type": "string",
+          "title": "Home Address",
+          "x-decorator": "FormItem",
+          "x-component": "Input",
+          "x-validator": [],
+          "x-component-props": {},
+          "x-decorator-props": {},
+          "description": "Enter yoour Home Address",
+          "x-designable-id": "mlhkqa71bp3",
+          "x-index": 3
+        },
+        "vzbii6b37vh": {
+          "type": "string",
+          "title": "Parent's Name",
+          "x-decorator": "FormItem",
+          "x-component": "Input",
+          "x-validator": "llm",
+          "x-component-props": {},
+          "x-decorator-props": {},
+          "description": "Enter Parent's Name",
+          "required": true,
+          "x-designable-id": "vzbii6b37vh",
+          "x-index": 4
+        },
+        "mwrabiks0tm": {
+          "type": "string",
+          "title": "Parent's Email",
+          "x-decorator": "FormItem",
+          "x-component": "Input",
+          "x-validator": "email",
+          "x-component-props": {},
+          "x-decorator-props": {},
+          "description": "Enter Parent's Email",
+          "x-designable-id": "mwrabiks0tm",
+          "x-index": 5
+        },
+        "t3k9wpka28i": {
+          "type": "string",
+          "title": "Parent's Number",
+          "x-decorator": "FormItem",
+          "x-component": "Input",
+          "x-validator": "phone",
+          "x-component-props": {},
+          "x-decorator-props": {},
+          "required": true,
+          "x-designable-id": "t3k9wpka28i",
+          "x-index": 6,
+          "description": "Enter Your Parent's Phone Number"
+        },
+        "jxzdf1ihs4p": {
+          "title": "Class",
+          "x-decorator": "FormItem",
+          "x-component": "Select",
+          "x-validator": [],
+          "x-component-props": {},
+          "x-decorator-props": {},
+          "description": "Select Your Class",
+          "enum": [
+            {
+              "children": [],
+              "label": "Class 1",
+              "value": "Class 1"
+            },
+            {
+              "children": [],
+              "label": "Class 2",
+              "value": "Class 2"
+            }
+          ],
+          "x-designable-id": "jxzdf1ihs4p",
+          "x-index": 7
+        },
+        "rulw9m23ned": {
+          "title": "Favorite Subject",
+          "x-decorator": "FormItem",
+          "x-component": "Select",
+          "x-validator": [],
+          "x-component-props": {},
+          "x-decorator-props": {},
+          "description": "What is your favorite subject (class 1)",
+          "enum": [
+            {
+              "children": [],
+              "label": "English",
+              "value": "English"
+            },
+            {
+              "children": [],
+              "label": "Maths",
+              "value": "Maths"
+            },
+            {
+              "children": [],
+              "label": "Social",
+              "value": "Social"
+            },
+            {
+              "children": [],
+              "label": "Science",
+              "value": "Science"
+            }
+          ],
+          "x-reactions": {
+            "dependencies": [
+              {
+                "property": "value",
+                "type": "any",
+                "source": "jxzdf1ihs4p",
+                "name": "v_ywhkjiadhvp"
+              }
+            ],
+            "fulfill": {
+              "state": {
+                "visible": "{{$deps.v_ywhkjiadhvp == \"Class 1\"}}"
+              }
+            }
+          },
+          "x-designable-id": "rulw9m23ned",
+          "x-index": 8
+        },
+        "9wfb5xd3m6i": {
+          "title": "Favorite Activity",
+          "x-decorator": "FormItem",
+          "x-component": "Select",
+          "x-validator": [],
+          "x-component-props": {},
+          "x-decorator-props": {},
+          "description": "What is your favorite activity? (class 2)",
+          "enum": [
+            {
+              "children": [],
+              "label": "Sport",
+              "value": "Sport"
+            },
+            {
+              "children": [],
+              "label": "Music",
+              "value": "Music"
+            },
+            {
+              "children": [],
+              "label": "Art",
+              "value": "Art"
+            }
+          ],
+          "x-reactions": {
+            "dependencies": [
+              {
+                "property": "value",
+                "type": "any",
+                "source": "jxzdf1ihs4p",
+                "name": "v_76xzc9jmznw"
+              }
+            ],
+            "fulfill": {
+              "state": {
+                "visible": "{{$deps.v_76xzc9jmznw == \"Class 2\"}}"
+              }
+            }
+          },
+          "x-designable-id": "9wfb5xd3m6i",
+          "x-index": 9
+        },
+        "btrnfe31aog": {
+          "type": "string",
+          "title": "Sports Achievements",
+          "x-decorator": "FormItem",
+          "x-component": "Input",
+          "x-validator": "llm",
+          "x-component-props": {},
+          "x-decorator-props": {},
+          "description": "Any Achievements in Sports (class 2)",
+          "x-reactions": {
+            "dependencies": [
+              {
+                "property": "value",
+                "type": "any",
+                "source": "9wfb5xd3m6i",
+                "name": "v_76waw8n10d5"
+              }
+            ],
+            "fulfill": {
+              "state": {
+                "visible": "{{$deps.v_76waw8n10d5 == \"Sport\"}}"
+              }
+            }
+          },
+          "x-designable-id": "btrnfe31aog",
+          "x-index": 10
+        },
+        "1n4whm35c3d": {
+          "type": "string",
+          "title": "Marks",
+          "x-decorator": "FormItem",
+          "x-component": "Input",
+          "x-validator": "number",
+          "x-component-props": {},
+          "x-decorator-props": {},
+          "description": "Enter your class 1 Marks. (Rounded to the nearest whole number)",
+          "x-reactions": {
+            "dependencies": [
+              {
+                "property": "value",
+                "type": "any",
+                "source": "jxzdf1ihs4p",
+                "name": "v_pyew01ilssm"
+              }
+            ],
+            "fulfill": {
+              "state": {
+                "visible": "{{$deps.v_pyew01ilssm == \"Class 2\"}}"
+              }
+            }
+          },
+          "required": true,
+          "x-designable-id": "1n4whm35c3d",
+          "x-index": 11
+        },
+        "99n7g2s7is2": {
+          "type": "string",
+          "title": "Previous School Name",
+          "x-decorator": "FormItem",
+          "x-component": "Input",
+          "x-validator": "llm",
+          "x-component-props": {},
+          "x-decorator-props": {},
+          "description": "Enter your previous school name (class 1)",
+          "x-reactions": {
+            "dependencies": [],
+            "fulfill": {
+              "state": {}
+            }
+          },
+          "x-designable-id": "99n7g2s7is2",
+          "x-index": 12
+        },
+        "kbdw2sgdy4j": {
+          "type": "string",
+          "title": "Medicals",
+          "x-decorator": "FormItem",
+          "x-component": "Input",
+          "x-validator": "llm",
+          "x-component-props": {},
+          "x-decorator-props": {},
+          "description": "Any Allergy or Medical conditions?",
+          "x-designable-id": "kbdw2sgdy4j",
+          "x-index": 13
+        },
+        "l407kfbj63m": {
+          "type": "string",
+          "title": "Emergency Person name",
+          "x-decorator": "FormItem",
+          "x-component": "Input",
+          "x-validator": "llm",
+          "x-component-props": {},
+          "x-decorator-props": {},
+          "description": "Enter person's name whom to contact in case of emergency",
+          "required": true,
+          "x-designable-id": "l407kfbj63m",
+          "x-index": 14
+        },
+        "5ydzby9oid8": {
+          "type": "string",
+          "title": "Emergency Contact",
+          "x-decorator": "FormItem",
+          "x-component": "Input",
+          "x-validator": "phone",
+          "x-component-props": {},
+          "x-decorator-props": {},
+          "description": "Enter any contact number where we can contact in case of emergency",
+          "required": true,
+          "x-designable-id": "5ydzby9oid8",
+          "x-index": 15
+        }
+      },
+      "x-designable-id": "dc5e8a7xbjr"
+    }
+  }

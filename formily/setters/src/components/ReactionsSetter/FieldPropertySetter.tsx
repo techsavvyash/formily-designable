@@ -70,7 +70,7 @@ export const FieldPropertySetter: React.FC<IFieldPropertySetterProps> = (
               <Menu.Item key={key.key}>
                 <TextWidget
                   token={`SettingComponents.ReactionsSetter.${
-                    key.token || key.key
+                    key.key || key.token
                   }`}
                 />
               </Menu.Item>

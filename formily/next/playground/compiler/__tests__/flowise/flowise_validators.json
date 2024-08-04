@@ -1,0 +1,1242 @@
+{
+  "nodes": [
+    {
+      "id": "start",
+      "data": {
+        "id": "start",
+        "name": "start",
+        "type": "Output",
+        "label": "Start",
+        "inputs": {},
+        "outputs": {
+          "startPointer": ""
+        },
+        "category": "Miscellaneous",
+        "selected": false,
+        "baseClasses": [
+          "xMessage"
+        ],
+        "description": "Start pointer Points to node  ",
+        "inputParams": [],
+        "inputAnchors": [],
+        "outputAnchors": [
+          {
+            "id": "start-output-startPointer-xMessage",
+            "name": "startPointer",
+            "type": "xMessage",
+            "label": "start Pointer"
+          }
+        ]
+      },
+      "type": "customNode",
+      "width": 300,
+      "height": 113,
+      "dragging": false,
+      "position": {
+        "x": 409.5560193025037,
+        "y": 25.92199759211908
+      },
+      "selected": false,
+      "positionAbsolute": {
+        "x": 409.5560193025037,
+        "y": 25.92199759211908
+      },
+      "style": {}
+    },
+    {
+      "id": "CODE_RUNNER_END",
+      "position": {
+        "x": 3255.789032183661,
+        "y": -141.0959960862705
+      },
+      "type": "customNode",
+      "data": {
+        "label": "Code Runner Transformer",
+        "name": "CODE_RUNNER",
+        "type": "Output",
+        "category": "GenericTransformer",
+        "description": "A code runner capable of running custom JS code.",
+        "baseClasses": [
+          "xMessage"
+        ],
+        "inputs": {
+          "xmessage": [
+            "CODE_RUNNER_isVISIBLE_0.data.instance",
+            "CODE_RUNNER_STORE_0.data.instance",
+            "CODE_RUNNER_isVISIBLE_2.data.instance",
+            "CODE_RUNNER_STORE_2.data.instance",
+            "CODE_RUNNER_isVISIBLE_0.data.instance",
+            "CODE_RUNNER_STORE_0.data.instance",
+            "CODE_RUNNER_isVISIBLE_1.data.instance",
+            "CODE_RUNNER_STORE_1.data.instance",
+            "CODE_RUNNER_isVISIBLE_2.data.instance",
+            "CODE_RUNNER_STORE_2.data.instance",
+            "CODE_RUNNER_isVISIBLE_3.data.instance",
+            "CODE_RUNNER_STORE_3.data.instance",
+            "CODE_RUNNER_isVISIBLE_1.data.instance",
+            "CODE_RUNNER_STORE_1.data.instance"
+          ],
+          "code": "const msg = JSON.parse($0);\nmsg.payload.text = \"Thank You\";\nreturn JSON.stringify(msg);"
+        },
+        "outputs": {
+          "onSuccess": "",
+          "onError": ""
+        },
+        "inputAnchors": [
+          {
+            "label": "XMessage",
+            "name": "xmessage",
+            "type": "xMessage",
+            "list": true,
+            "id": "CODE_RUNNER_END-input-xmessage-xMessage"
+          }
+        ],
+        "inputParams": [
+          {
+            "label": "Code",
+            "name": "code",
+            "type": "ide",
+            "rows": 2,
+            "id": "CODE_RUNNER_END-input-code-ide"
+          },
+          {
+            "id": "CODE_RUNNER_END-input-sideEffects-json",
+            "label": "SideEffects",
+            "name": "sideEffects",
+            "rows": 2,
+            "type": "json"
+          }
+        ],
+        "outputAnchors": [
+          {
+            "id": "CODE_RUNNER_END-output-onSuccess-xMessage",
+            "name": "onSuccess",
+            "label": "On Success",
+            "type": "xMessage"
+          },
+          {
+            "id": "CODE_RUNNER_END-output-onError-xMessage",
+            "name": "onError",
+            "label": "On Error",
+            "type": "xMessage"
+          }
+        ],
+        "id": "CODE_RUNNER_END",
+        "selected": false
+      },
+      "width": 300,
+      "height": 569,
+      "selected": false,
+      "dragging": false,
+      "positionAbsolute": {
+        "x": 3255.789032183661,
+        "y": -141.0959960862705
+      },
+      "style": {}
+    },
+    {
+      "id": "CODE_RUNNER_isVISIBLE_0",
+      "data": {
+        "id": "CODE_RUNNER_isVISIBLE_0",
+        "name": "CODE_RUNNER",
+        "type": "Output",
+        "label": "Code Runner Transformer",
+        "inputs": {
+          "code": "const msg = JSON.parse($0);\nlet formInput = msg.transformer.metaData.formInput;\nif(!(true)) throw new Error('Not Visible');\nmsg.transformer.metaData.required = {\"1joor8luiey\" : false};\nreturn JSON.stringify(msg);",
+          "xmessage": [
+            "start.data.instance"
+          ]
+        },
+        "outputs": {
+          "onError": "",
+          "onSuccess": ""
+        },
+        "category": "GenericTransformer",
+        "selected": false,
+        "baseClasses": [
+          "xMessage"
+        ],
+        "description": "A code runner capable of running custom JS code.",
+        "inputParams": [
+          {
+            "id": "CODE_RUNNER_isVISIBLE_0-input-code-ide",
+            "name": "code",
+            "rows": 2,
+            "type": "ide",
+            "label": "Code"
+          },
+          {
+            "id": "CODE_RUNNER_isVISIBLE_0-input-sideEffects-json",
+            "name": "sideEffects",
+            "rows": 2,
+            "type": "json",
+            "label": "SideEffects"
+          }
+        ],
+        "inputAnchors": [
+          {
+            "id": "CODE_RUNNER_isVISIBLE_0-input-xmessage-xMessage",
+            "list": true,
+            "name": "xmessage",
+            "type": "xMessage",
+            "label": "XMessage"
+          }
+        ],
+        "outputAnchors": [
+          {
+            "id": "CODE_RUNNER_isVISIBLE_0-output-onSuccess-xMessage",
+            "name": "onSuccess",
+            "type": "xMessage",
+            "label": "On Success"
+          },
+          {
+            "id": "CODE_RUNNER_isVISIBLE_0-output-onError-xMessage",
+            "name": "onError",
+            "type": "xMessage",
+            "label": "On Error"
+          }
+        ]
+      },
+      "type": "customNode",
+      "width": 300,
+      "height": 569,
+      "dragging": false,
+      "position": {
+        "x": 3255.789032183661,
+        "y": -141.0959960862705
+      },
+      "selected": false,
+      "positionAbsolute": {
+        "x": 3255.789032183661,
+        "y": -141.0959960862705
+      },
+      "style": {}
+    },
+    {
+      "id": "CODE_RUNNER_ASK_0",
+      "data": {
+        "id": "CODE_RUNNER_ASK_0",
+        "name": "CODE_RUNNER",
+        "type": "Output",
+        "label": "Code Runner Transformer",
+        "inputs": {
+          "code": "const msg = JSON.parse($0);\nmsg.payload.text = \"Description not provided\";\nmsg.transformer.metaData.currentQuestion=\"Description not provided\"\nmsg.payload.buttonChoices ={\"header\":\"Description not provided\",\"choices\":[{\"key\":\"Item 1 value\",\"text\":\"Item 1 label\",\"isEnabled\":true,\"showTextInput\":true},{\"key\":\"Item 2 value\",\"text\":\"Item 2 label\",\"isEnabled\":true,\"showTextInput\":true}]};\n\n    const currentInput = msg.transformer.metaData.currentInput;\n    if(currentInput){\n      currentInput[\"1joor8luiey\"] = {\n        text: \"\",\n        retries: 0\n      };\n    }\n    else {\n      msg.transformer.metaData.currentInput = {\n        \"1joor8luiey\": {\n          text: \"\",\n          retries: 0\n        }\n      };  \n    }\n  return JSON.stringify(msg);",
+          "xmessage": [
+            "CODE_RUNNER_isVISIBLE_0.data.instance"
+          ]
+        },
+        "outputs": {
+          "onError": "",
+          "onSuccess": ""
+        },
+        "category": "GenericTransformer",
+        "selected": false,
+        "baseClasses": [
+          "xMessage"
+        ],
+        "description": "A code runner capable of running custom JS code.",
+        "inputParams": [
+          {
+            "id": "CODE_RUNNER_ASK_0-input-code-ide",
+            "name": "code",
+            "rows": 2,
+            "type": "ide",
+            "label": "Code"
+          },
+          {
+            "id": "CODE_RUNNER_ASK_0-input-sideEffects-json",
+            "name": "sideEffects",
+            "rows": 2,
+            "type": "json",
+            "label": "SideEffects"
+          }
+        ],
+        "inputAnchors": [
+          {
+            "id": "CODE_RUNNER_ASK_0-input-xmessage-xMessage",
+            "list": true,
+            "name": "xmessage",
+            "type": "xMessage",
+            "label": "XMessage"
+          }
+        ],
+        "outputAnchors": [
+          {
+            "id": "CODE_RUNNER_ASK_0-output-onSuccess-xMessage",
+            "name": "onSuccess",
+            "type": "xMessage",
+            "label": "On Success"
+          },
+          {
+            "id": "CODE_RUNNER_ASK_0-output-onError-xMessage",
+            "name": "onError",
+            "type": "xMessage",
+            "label": "On Error"
+          }
+        ]
+      },
+      "type": "customNode",
+      "width": 300,
+      "height": 569,
+      "dragging": false,
+      "position": {
+        "x": 3255.789032183661,
+        "y": -141.0959960862705
+      },
+      "selected": false,
+      "positionAbsolute": {
+        "x": 3255.789032183661,
+        "y": -141.0959960862705
+      },
+      "style": {}
+    },
+    {
+      "id": "USER_FEEDBACK_LOOP_0",
+      "data": {
+        "id": "USER_FEEDBACK_LOOP_0",
+        "name": "USER_FEEDBACK_LOOP",
+        "type": "Output",
+        "label": "User Feedback Loop",
+        "inputs": {
+          "xmessage": [
+            "CODE_RUNNER_ASK_0.data.instance",
+            "CODE_RUNNER_VALIDATION_0.data.instance"
+          ]
+        },
+        "outputs": {
+          "restoreState": ""
+        },
+        "category": "StateRestoreTransformer",
+        "selected": false,
+        "baseClasses": [
+          "xMessage"
+        ],
+        "description": "A transformer which restores state to a specific node after sending a message to user.",
+        "inputParams": [
+          {
+            "id": "USER_FEEDBACK_LOOP_0-input-sideEffects-json",
+            "name": "sideEffects",
+            "rows": 2,
+            "type": "json",
+            "label": "SideEffects"
+          }
+        ],
+        "inputAnchors": [
+          {
+            "id": "USER_FEEDBACK_LOOP_0-input-xmessage-xMessage",
+            "list": true,
+            "name": "xmessage",
+            "type": "xMessage",
+            "label": "XMessage"
+          }
+        ],
+        "outputAnchors": [
+          {
+            "id": "USER_FEEDBACK_LOOP_0-output-restoreState-xMessage",
+            "name": "restoreState",
+            "type": "xMessage",
+            "label": "Restore State"
+          }
+        ]
+      },
+      "type": "customNode",
+      "width": 300,
+      "height": 569,
+      "dragging": false,
+      "position": {
+        "x": 3255.789032183661,
+        "y": -141.0959960862705
+      },
+      "selected": false,
+      "positionAbsolute": {
+        "x": 3255.789032183661,
+        "y": -141.0959960862705
+      },
+      "style": {}
+    },
+    {
+      "id": "CODE_RUNNER_RUN_VALIDATOR_0",
+      "data": {
+        "id": "CODE_RUNNER_RUN_VALIDATOR_0",
+        "name": "CODE_RUNNER",
+        "type": "Output",
+        "label": "Code Runner Transformer",
+        "inputs": {
+          "code": "const msg = JSON.parse($0);\nfunction emailValidator(data) {\n  const emailRegex = /^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\\.[a-zA-Z]{2,}$/\n  const error = emailRegex.test(data)\n  return {\n    error: !error,\n    message: !error ? 'Your response is not a valid email' : 'Thanks for your response',\n  }\n}\n\nfunction urlValidator(data) {\n  const urlRegex = /^(http|https):\\/\\/[^ \"]+$/\n  const error = urlRegex.test(data)\n  return {\n    error: !error,\n    message: !error ? 'Your response is not a valid URL' : 'Thanks for your response',\n  }\n}\n\nfunction numberValidator(data) {\n  const numberRegex = /^\\d+$/\n  const error = numberRegex.test(data)\n  return {\n    error: !error,\n    message: !error ? 'Your response is not a valid number' : 'Thanks for your response',\n  }\n}\n\nfunction dateValidator(data) {\n  const dateRegex = /^\\d{4}-\\d{2}-\\d{2}$/\n  const error = dateRegex.test(data)\n  return {\n    error: !error,\n    message: !error ? 'Your response is not a valid date' : 'Thanks for your response',\n  }\n}\n\nfunction phoneValidator(data) {\n  const phoneRegex = /^(\\+91[-\\s]?)?[6-9]\\d{9}$/\n  const error = phoneRegex.test(data)\n  return {\n    error: !error,\n    message: !error ? 'Your response is not a valid phone number' : 'Thanks for your response',\n  }\n}\n\nconst validator = {\n  url: urlValidator,\n  email: emailValidator,\n  date: dateValidator,\n  number: numberValidator,\n  phone: phoneValidator,\n}\n    if(!msg.transformer.metaData.validationResult) {\n      msg.transformer.metaData.validationResult = {\n        \"1joor8luiey\": {}\n      };\n    }\n    else{\n      msg.transformer.metaData.validationResult = {\n        \"1joor8luiey\": {}\n      };\n    }\n  \n  if(msg.payload.text == \"SKIP\") {\n    msg.transformer.metaData.validationResult[\"1joor8luiey\"] = {\n      \"skip-validation\": {\n        error: false,\n        message: \"User Skipped the message\"\n      }\n    }\n    return JSON.stringify(msg);\n  }\n  \n  msg.transformer.metaData.currentInput[\"1joor8luiey\"].text = msg.payload.text;\n  return JSON.stringify(msg);",
+          "xmessage": [
+            "USER_FEEDBACK_LOOP_0.data.instance"
+          ]
+        },
+        "outputs": {
+          "onError": "",
+          "onSuccess": ""
+        },
+        "category": "GenericTransformer",
+        "selected": false,
+        "baseClasses": [
+          "xMessage"
+        ],
+        "description": "A code runner capable of running custom JS code.",
+        "inputParams": [
+          {
+            "id": "CODE_RUNNER_RUN_VALIDATOR_0-input-code-ide",
+            "name": "code",
+            "rows": 2,
+            "type": "ide",
+            "label": "Code"
+          },
+          {
+            "id": "CODE_RUNNER_RUN_VALIDATOR_0-input-sideEffects-json",
+            "name": "sideEffects",
+            "rows": 2,
+            "type": "json",
+            "label": "SideEffects"
+          }
+        ],
+        "inputAnchors": [
+          {
+            "id": "CODE_RUNNER_RUN_VALIDATOR_0-input-xmessage-xMessage",
+            "list": true,
+            "name": "xmessage",
+            "type": "xMessage",
+            "label": "XMessage"
+          }
+        ],
+        "outputAnchors": [
+          {
+            "id": "CODE_RUNNER_RUN_VALIDATOR_0-output-onSuccess-xMessage",
+            "name": "onSuccess",
+            "type": "xMessage",
+            "label": "On Success"
+          },
+          {
+            "id": "CODE_RUNNER_RUN_VALIDATOR_0-output-onError-xMessage",
+            "name": "onError",
+            "type": "xMessage",
+            "label": "On Error"
+          }
+        ]
+      },
+      "type": "customNode",
+      "width": 300,
+      "height": 569,
+      "dragging": false,
+      "position": {
+        "x": 3255.789032183661,
+        "y": -141.0959960862705
+      },
+      "selected": false,
+      "positionAbsolute": {
+        "x": 3255.789032183661,
+        "y": -141.0959960862705
+      },
+      "style": {}
+    },
+    {
+      "id": "CODE_RUNNER_STORE_0",
+      "data": {
+        "id": "CODE_RUNNER_STORE_0",
+        "name": "CODE_RUNNER",
+        "type": "Output",
+        "label": "Code Runner Transformer",
+        "inputs": {
+          "code": "const msg = JSON.parse($0);\n\n    if(msg.transformer.metaData.validationResult[\"1joor8luiey\"][\"skip-validation\"]){\n      let formInput = msg.transformer.metaData.formInput;\n      if(formInput){\n        formInput = {...formInput, \"1joor8luiey\": \"\"};\n      } else {\n        formInput = {\"1joor8luiey\": \"\"}\n      }\n      msg.transformer.metaData.formInput = formInput;\n      return JSON.stringify(msg);\n    }\n  \n    let formInput = msg.transformer.metaData.formInput;\n    const inputText = msg.transformer.metaData.currentInput[\"1joor8luiey\"].text;\n    if(formInput){\n      formInput = {...formInput, \"1joor8luiey\": inputText !=\"SKIP\" ? inputText : \"\"};\n    } else {\n      formInput = {\"1joor8luiey\": inputText !=\"SKIP\" ? inputText : \"\"};\n    }\n    msg.transformer.metaData.formInput = formInput;\n  return JSON.stringify(msg);",
+          "xmessage": [
+            "CODE_RUNNER_RUN_VALIDATOR_0.data.instance"
+          ]
+        },
+        "outputs": {
+          "onError": "",
+          "onSuccess": ""
+        },
+        "category": "GenericTransformer",
+        "selected": false,
+        "baseClasses": [
+          "xMessage"
+        ],
+        "description": "A code runner capable of running custom JS code.",
+        "inputParams": [
+          {
+            "id": "CODE_RUNNER_STORE_0-input-code-ide",
+            "name": "code",
+            "rows": 2,
+            "type": "ide",
+            "label": "Code"
+          },
+          {
+            "id": "CODE_RUNNER_STORE_0-input-sideEffects-json",
+            "name": "sideEffects",
+            "rows": 2,
+            "type": "json",
+            "label": "SideEffects"
+          }
+        ],
+        "inputAnchors": [
+          {
+            "id": "CODE_RUNNER_STORE_0-input-xmessage-xMessage",
+            "list": true,
+            "name": "xmessage",
+            "type": "xMessage",
+            "label": "XMessage"
+          }
+        ],
+        "outputAnchors": [
+          {
+            "id": "CODE_RUNNER_STORE_0-output-onSuccess-xMessage",
+            "name": "onSuccess",
+            "type": "xMessage",
+            "label": "On Success"
+          },
+          {
+            "id": "CODE_RUNNER_STORE_0-output-onError-xMessage",
+            "name": "onError",
+            "type": "xMessage",
+            "label": "On Error"
+          }
+        ]
+      },
+      "type": "customNode",
+      "width": 300,
+      "height": 569,
+      "dragging": false,
+      "position": {
+        "x": 3255.789032183661,
+        "y": -141.0959960862705
+      },
+      "selected": false,
+      "positionAbsolute": {
+        "x": 3255.789032183661,
+        "y": -141.0959960862705
+      },
+      "style": {}
+    },
+    {
+      "id": "CODE_RUNNER_VALIDATION_0",
+      "data": {
+        "id": "CODE_RUNNER_VALIDATION_0",
+        "name": "CODE_RUNNER",
+        "type": "Output",
+        "label": "Code Runner Transformer",
+        "inputs": {
+          "code": "const msg = JSON.parse($0);\n\n    msg.transformer.metaData.currentInput[\"1joor8luiey\"].retries += 1; \n  \n    if(msg.transformer.metaData.currentInput[\"1joor8luiey\"].retries >= 2) {\n      if(!msg.transformer.metaData.required[\"1joor8luiey\"]){\n        msg.payload.text = \"You have exceeded the number of retries for this field. If you wish you can Use the 'SKIP' button to skip this field. Contact the admin if you want to restart the survey.\";\n        msg.payload.buttonChoices = {\n          header: \"You have exceeded the number of retries for this field. If you wish you can Use the 'SKIP' button to skip this field.\",\n          choices: [\n          {\n            text: \"SKIP\",\n            key: \"SKIP\",\n            isEnabled: true,\n            showTextInput: true\n          },\n          ]\n        }\n      }else{\n        msg.payload.text += \" This is a mandatory question you can't skip it.\";\n      }\n    }\n  return JSON.stringify(msg);",
+          "xmessage": [
+            "CODE_RUNNER_STORE_0.data.instance"
+          ]
+        },
+        "outputs": {
+          "onError": "",
+          "onSuccess": ""
+        },
+        "category": "GenericTransformer",
+        "selected": false,
+        "baseClasses": [
+          "xMessage"
+        ],
+        "description": "A code runner capable of running custom JS code.",
+        "inputParams": [
+          {
+            "id": "CODE_RUNNER_VALIDATION_0-input-code-ide",
+            "name": "code",
+            "rows": 2,
+            "type": "ide",
+            "label": "Code"
+          },
+          {
+            "id": "CODE_RUNNER_VALIDATION_0-input-sideEffects-json",
+            "name": "sideEffects",
+            "rows": 2,
+            "type": "json",
+            "label": "SideEffects"
+          }
+        ],
+        "inputAnchors": [
+          {
+            "id": "CODE_RUNNER_VALIDATION_0-input-xmessage-xMessage",
+            "list": true,
+            "name": "xmessage",
+            "type": "xMessage",
+            "label": "XMessage"
+          }
+        ],
+        "outputAnchors": [
+          {
+            "id": "CODE_RUNNER_VALIDATION_0-output-onSuccess-xMessage",
+            "name": "onSuccess",
+            "type": "xMessage",
+            "label": "On Success"
+          },
+          {
+            "id": "CODE_RUNNER_VALIDATION_0-output-onError-xMessage",
+            "name": "onError",
+            "type": "xMessage",
+            "label": "On Error"
+          }
+        ]
+      },
+      "type": "customNode",
+      "width": 300,
+      "height": 569,
+      "dragging": false,
+      "position": {
+        "x": 3255.789032183661,
+        "y": -141.0959960862705
+      },
+      "selected": false,
+      "positionAbsolute": {
+        "x": 3255.789032183661,
+        "y": -141.0959960862705
+      },
+      "style": {}
+    },
+    {
+      "id": "CODE_RUNNER_isVISIBLE_1",
+      "data": {
+        "id": "CODE_RUNNER_isVISIBLE_1",
+        "name": "CODE_RUNNER",
+        "type": "Output",
+        "label": "Code Runner Transformer",
+        "inputs": {
+          "code": "const msg = JSON.parse($0);\nlet formInput = msg.transformer.metaData.formInput;\nif(!(true)) throw new Error('Not Visible');\nmsg.transformer.metaData.required = {\"q6u4jakp0kb\" : false};\nreturn JSON.stringify(msg);",
+          "xmessage": [
+            "CODE_RUNNER_isVISIBLE_0.data.instance",
+            "CODE_RUNNER_STORE_0.data.instance"
+          ]
+        },
+        "outputs": {
+          "onError": "",
+          "onSuccess": ""
+        },
+        "category": "GenericTransformer",
+        "selected": false,
+        "baseClasses": [
+          "xMessage"
+        ],
+        "description": "A code runner capable of running custom JS code.",
+        "inputParams": [
+          {
+            "id": "CODE_RUNNER_isVISIBLE_1-input-code-ide",
+            "name": "code",
+            "rows": 2,
+            "type": "ide",
+            "label": "Code"
+          },
+          {
+            "id": "CODE_RUNNER_isVISIBLE_1-input-sideEffects-json",
+            "name": "sideEffects",
+            "rows": 2,
+            "type": "json",
+            "label": "SideEffects"
+          }
+        ],
+        "inputAnchors": [
+          {
+            "id": "CODE_RUNNER_isVISIBLE_1-input-xmessage-xMessage",
+            "list": true,
+            "name": "xmessage",
+            "type": "xMessage",
+            "label": "XMessage"
+          }
+        ],
+        "outputAnchors": [
+          {
+            "id": "CODE_RUNNER_isVISIBLE_1-output-onSuccess-xMessage",
+            "name": "onSuccess",
+            "type": "xMessage",
+            "label": "On Success"
+          },
+          {
+            "id": "CODE_RUNNER_isVISIBLE_1-output-onError-xMessage",
+            "name": "onError",
+            "type": "xMessage",
+            "label": "On Error"
+          }
+        ]
+      },
+      "type": "customNode",
+      "width": 300,
+      "height": 569,
+      "dragging": false,
+      "position": {
+        "x": 3255.789032183661,
+        "y": -141.0959960862705
+      },
+      "selected": false,
+      "positionAbsolute": {
+        "x": 3255.789032183661,
+        "y": -141.0959960862705
+      },
+      "style": {}
+    },
+    {
+      "id": "CODE_RUNNER_ASK_1",
+      "data": {
+        "id": "CODE_RUNNER_ASK_1",
+        "name": "CODE_RUNNER",
+        "type": "Output",
+        "label": "Code Runner Transformer",
+        "inputs": {
+          "code": "const msg = JSON.parse($0);\nmsg.payload.text = \"Say Hello\";\nmsg.transformer.metaData.currentQuestion=\"Say Hello\"\n\n    const currentInput = msg.transformer.metaData.currentInput;\n    if(currentInput){\n      currentInput[\"q6u4jakp0kb\"] = {\n        text: \"\",\n        retries: 0\n      };\n    }\n    else {\n      msg.transformer.metaData.currentInput = {\n        \"q6u4jakp0kb\": {\n          text: \"\",\n          retries: 0\n        }\n      };  \n    }\n  return JSON.stringify(msg);",
+          "xmessage": [
+            "CODE_RUNNER_isVISIBLE_1.data.instance"
+          ]
+        },
+        "outputs": {
+          "onError": "",
+          "onSuccess": ""
+        },
+        "category": "GenericTransformer",
+        "selected": false,
+        "baseClasses": [
+          "xMessage"
+        ],
+        "description": "A code runner capable of running custom JS code.",
+        "inputParams": [
+          {
+            "id": "CODE_RUNNER_ASK_1-input-code-ide",
+            "name": "code",
+            "rows": 2,
+            "type": "ide",
+            "label": "Code"
+          },
+          {
+            "id": "CODE_RUNNER_ASK_1-input-sideEffects-json",
+            "name": "sideEffects",
+            "rows": 2,
+            "type": "json",
+            "label": "SideEffects"
+          }
+        ],
+        "inputAnchors": [
+          {
+            "id": "CODE_RUNNER_ASK_1-input-xmessage-xMessage",
+            "list": true,
+            "name": "xmessage",
+            "type": "xMessage",
+            "label": "XMessage"
+          }
+        ],
+        "outputAnchors": [
+          {
+            "id": "CODE_RUNNER_ASK_1-output-onSuccess-xMessage",
+            "name": "onSuccess",
+            "type": "xMessage",
+            "label": "On Success"
+          },
+          {
+            "id": "CODE_RUNNER_ASK_1-output-onError-xMessage",
+            "name": "onError",
+            "type": "xMessage",
+            "label": "On Error"
+          }
+        ]
+      },
+      "type": "customNode",
+      "width": 300,
+      "height": 569,
+      "dragging": false,
+      "position": {
+        "x": 3255.789032183661,
+        "y": -141.0959960862705
+      },
+      "selected": false,
+      "positionAbsolute": {
+        "x": 3255.789032183661,
+        "y": -141.0959960862705
+      },
+      "style": {}
+    },
+    {
+      "id": "USER_FEEDBACK_LOOP_1",
+      "data": {
+        "id": "USER_FEEDBACK_LOOP_1",
+        "name": "USER_FEEDBACK_LOOP",
+        "type": "Output",
+        "label": "User Feedback Loop",
+        "inputs": {
+          "xmessage": [
+            "CODE_RUNNER_ASK_1.data.instance",
+            "CODE_RUNNER_VALIDATION_1.data.instance"
+          ]
+        },
+        "outputs": {
+          "restoreState": ""
+        },
+        "category": "StateRestoreTransformer",
+        "selected": false,
+        "baseClasses": [
+          "xMessage"
+        ],
+        "description": "A transformer which restores state to a specific node after sending a message to user.",
+        "inputParams": [
+          {
+            "id": "USER_FEEDBACK_LOOP_1-input-sideEffects-json",
+            "name": "sideEffects",
+            "rows": 2,
+            "type": "json",
+            "label": "SideEffects"
+          }
+        ],
+        "inputAnchors": [
+          {
+            "id": "USER_FEEDBACK_LOOP_1-input-xmessage-xMessage",
+            "list": true,
+            "name": "xmessage",
+            "type": "xMessage",
+            "label": "XMessage"
+          }
+        ],
+        "outputAnchors": [
+          {
+            "id": "USER_FEEDBACK_LOOP_1-output-restoreState-xMessage",
+            "name": "restoreState",
+            "type": "xMessage",
+            "label": "Restore State"
+          }
+        ]
+      },
+      "type": "customNode",
+      "width": 300,
+      "height": 569,
+      "dragging": false,
+      "position": {
+        "x": 3255.789032183661,
+        "y": -141.0959960862705
+      },
+      "selected": false,
+      "positionAbsolute": {
+        "x": 3255.789032183661,
+        "y": -141.0959960862705
+      },
+      "style": {}
+    },
+    {
+      "id": "CODE_RUNNER_RUN_VALIDATOR_1",
+      "data": {
+        "id": "CODE_RUNNER_RUN_VALIDATOR_1",
+        "name": "CODE_RUNNER",
+        "type": "Output",
+        "label": "Code Runner Transformer",
+        "inputs": {
+          "code": "const msg = JSON.parse($0);\nfunction emailValidator(data) {\n  const emailRegex = /^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\\.[a-zA-Z]{2,}$/\n  const error = emailRegex.test(data)\n  return {\n    error: !error,\n    message: !error ? 'Your response is not a valid email' : 'Thanks for your response',\n  }\n}\n\nfunction urlValidator(data) {\n  const urlRegex = /^(http|https):\\/\\/[^ \"]+$/\n  const error = urlRegex.test(data)\n  return {\n    error: !error,\n    message: !error ? 'Your response is not a valid URL' : 'Thanks for your response',\n  }\n}\n\nfunction numberValidator(data) {\n  const numberRegex = /^\\d+$/\n  const error = numberRegex.test(data)\n  return {\n    error: !error,\n    message: !error ? 'Your response is not a valid number' : 'Thanks for your response',\n  }\n}\n\nfunction dateValidator(data) {\n  const dateRegex = /^\\d{4}-\\d{2}-\\d{2}$/\n  const error = dateRegex.test(data)\n  return {\n    error: !error,\n    message: !error ? 'Your response is not a valid date' : 'Thanks for your response',\n  }\n}\n\nfunction phoneValidator(data) {\n  const phoneRegex = /^(\\+91[-\\s]?)?[6-9]\\d{9}$/\n  const error = phoneRegex.test(data)\n  return {\n    error: !error,\n    message: !error ? 'Your response is not a valid phone number' : 'Thanks for your response',\n  }\n}\n\nconst validator = {\n  url: urlValidator,\n  email: emailValidator,\n  date: dateValidator,\n  number: numberValidator,\n  phone: phoneValidator,\n}\n    if(!msg.transformer.metaData.validationResult) {\n      msg.transformer.metaData.validationResult = {\n        \"q6u4jakp0kb\": {}\n      };\n    }\n    else{\n      msg.transformer.metaData.validationResult = {\n        \"q6u4jakp0kb\": {}\n      };\n    }\n  \n  if(msg.payload.text == \"SKIP\") {\n    msg.transformer.metaData.validationResult[\"q6u4jakp0kb\"] = {\n      \"skip-validation\": {\n        error: false,\n        message: \"User Skipped the message\"\n      }\n    }\n    return JSON.stringify(msg);\n  }\n  \n  msg.transformer.metaData.currentInput[\"q6u4jakp0kb\"].text = msg.payload.text;\n  \n    const inputText = msg.transformer.metaData.currentInput[\"q6u4jakp0kb\"].text;\n\n    let res;\n    const validationResult = msg.transformer.metaData.validationResult[\"q6u4jakp0kb\"] || {};\n    \n        res = validator[\"number\"](inputText)\n        validationResult[\"number\"] = res;\n\n      msg.transformer.metaData.validationResult[\"q6u4jakp0kb\"] = validationResult;\nreturn JSON.stringify(msg);",
+          "xmessage": [
+            "USER_FEEDBACK_LOOP_1.data.instance"
+          ]
+        },
+        "outputs": {
+          "onError": "",
+          "onSuccess": ""
+        },
+        "category": "GenericTransformer",
+        "selected": false,
+        "baseClasses": [
+          "xMessage"
+        ],
+        "description": "A code runner capable of running custom JS code.",
+        "inputParams": [
+          {
+            "id": "CODE_RUNNER_RUN_VALIDATOR_1-input-code-ide",
+            "name": "code",
+            "rows": 2,
+            "type": "ide",
+            "label": "Code"
+          },
+          {
+            "id": "CODE_RUNNER_RUN_VALIDATOR_1-input-sideEffects-json",
+            "name": "sideEffects",
+            "rows": 2,
+            "type": "json",
+            "label": "SideEffects"
+          }
+        ],
+        "inputAnchors": [
+          {
+            "id": "CODE_RUNNER_RUN_VALIDATOR_1-input-xmessage-xMessage",
+            "list": true,
+            "name": "xmessage",
+            "type": "xMessage",
+            "label": "XMessage"
+          }
+        ],
+        "outputAnchors": [
+          {
+            "id": "CODE_RUNNER_RUN_VALIDATOR_1-output-onSuccess-xMessage",
+            "name": "onSuccess",
+            "type": "xMessage",
+            "label": "On Success"
+          },
+          {
+            "id": "CODE_RUNNER_RUN_VALIDATOR_1-output-onError-xMessage",
+            "name": "onError",
+            "type": "xMessage",
+            "label": "On Error"
+          }
+        ]
+      },
+      "type": "customNode",
+      "width": 300,
+      "height": 569,
+      "dragging": false,
+      "position": {
+        "x": 3255.789032183661,
+        "y": -141.0959960862705
+      },
+      "selected": false,
+      "positionAbsolute": {
+        "x": 3255.789032183661,
+        "y": -141.0959960862705
+      },
+      "style": {}
+    },
+    {
+      "id": "CODE_RUNNER_STORE_1",
+      "data": {
+        "id": "CODE_RUNNER_STORE_1",
+        "name": "CODE_RUNNER",
+        "type": "Output",
+        "label": "Code Runner Transformer",
+        "inputs": {
+          "code": "const msg = JSON.parse($0);\n\n    if(msg.transformer.metaData.validationResult[\"q6u4jakp0kb\"][\"skip-validation\"]){\n      let formInput = msg.transformer.metaData.formInput;\n      if(formInput){\n        formInput = {...formInput, \"q6u4jakp0kb\": \"\"};\n      } else {\n        formInput = {\"q6u4jakp0kb\": \"\"}\n      }\n      msg.transformer.metaData.formInput = formInput;\n      return JSON.stringify(msg);\n    }\n  \n      if(msg.transformer.metaData.validationResult[\"q6u4jakp0kb\"].number.error){\n          throw new Error(\"Required Field\");\n      }\n    \n    let formInput = msg.transformer.metaData.formInput;\n    const inputText = msg.transformer.metaData.currentInput[\"q6u4jakp0kb\"].text;\n    if(formInput){\n      formInput = {...formInput, \"q6u4jakp0kb\": inputText !=\"SKIP\" ? inputText : \"\"};\n    } else {\n      formInput = {\"q6u4jakp0kb\": inputText !=\"SKIP\" ? inputText : \"\"};\n    }\n    msg.transformer.metaData.formInput = formInput;\n  return JSON.stringify(msg);",
+          "xmessage": [
+            "CODE_RUNNER_RUN_VALIDATOR_1.data.instance"
+          ]
+        },
+        "outputs": {
+          "onError": "",
+          "onSuccess": ""
+        },
+        "category": "GenericTransformer",
+        "selected": false,
+        "baseClasses": [
+          "xMessage"
+        ],
+        "description": "A code runner capable of running custom JS code.",
+        "inputParams": [
+          {
+            "id": "CODE_RUNNER_STORE_1-input-code-ide",
+            "name": "code",
+            "rows": 2,
+            "type": "ide",
+            "label": "Code"
+          },
+          {
+            "id": "CODE_RUNNER_STORE_1-input-sideEffects-json",
+            "name": "sideEffects",
+            "rows": 2,
+            "type": "json",
+            "label": "SideEffects"
+          }
+        ],
+        "inputAnchors": [
+          {
+            "id": "CODE_RUNNER_STORE_1-input-xmessage-xMessage",
+            "list": true,
+            "name": "xmessage",
+            "type": "xMessage",
+            "label": "XMessage"
+          }
+        ],
+        "outputAnchors": [
+          {
+            "id": "CODE_RUNNER_STORE_1-output-onSuccess-xMessage",
+            "name": "onSuccess",
+            "type": "xMessage",
+            "label": "On Success"
+          },
+          {
+            "id": "CODE_RUNNER_STORE_1-output-onError-xMessage",
+            "name": "onError",
+            "type": "xMessage",
+            "label": "On Error"
+          }
+        ]
+      },
+      "type": "customNode",
+      "width": 300,
+      "height": 569,
+      "dragging": false,
+      "position": {
+        "x": 3255.789032183661,
+        "y": -141.0959960862705
+      },
+      "selected": false,
+      "positionAbsolute": {
+        "x": 3255.789032183661,
+        "y": -141.0959960862705
+      },
+      "style": {}
+    },
+    {
+      "id": "CODE_RUNNER_VALIDATION_1",
+      "data": {
+        "id": "CODE_RUNNER_VALIDATION_1",
+        "name": "CODE_RUNNER",
+        "type": "Output",
+        "label": "Code Runner Transformer",
+        "inputs": {
+          "code": "const msg = JSON.parse($0);\n\n    msg.transformer.metaData.currentInput[\"q6u4jakp0kb\"].retries += 1; \n  \n      const validationMsgs = [];\n        const validations = msg.transformer.metaData.validationResult;\n        if(validations){\n          const validationResult = msg.transformer.metaData.validationResult[\"q6u4jakp0kb\"];\n          if(validationResult){\n            const validationTypes = Object.keys(validationResult);\n            validationTypes.forEach((validationType) => {\n              if(validationResult[validationType].error){\n                validationMsgs.push(validationResult[validationType].message);\n              }\n            });\n            const validationString = validationMsgs.join(\" \");\n            msg.payload.text = validationString;\n          }\n        }\n    \n    if(msg.transformer.metaData.currentInput[\"q6u4jakp0kb\"].retries >= 2) {\n      if(!msg.transformer.metaData.required[\"q6u4jakp0kb\"]){\n        msg.payload.text = \"You have exceeded the number of retries for this field. If you wish you can Use the 'SKIP' button to skip this field. Contact the admin if you want to restart the survey.\";\n        msg.payload.buttonChoices = {\n          header: \"You have exceeded the number of retries for this field. If you wish you can Use the 'SKIP' button to skip this field.\",\n          choices: [\n          {\n            text: \"SKIP\",\n            key: \"SKIP\",\n            isEnabled: true,\n            showTextInput: true\n          },\n          ]\n        }\n      }else{\n        msg.payload.text += \" This is a mandatory question you can't skip it.\";\n      }\n    }\n  return JSON.stringify(msg);",
+          "xmessage": [
+            "CODE_RUNNER_STORE_1.data.instance"
+          ]
+        },
+        "outputs": {
+          "onError": "",
+          "onSuccess": ""
+        },
+        "category": "GenericTransformer",
+        "selected": false,
+        "baseClasses": [
+          "xMessage"
+        ],
+        "description": "A code runner capable of running custom JS code.",
+        "inputParams": [
+          {
+            "id": "CODE_RUNNER_VALIDATION_1-input-code-ide",
+            "name": "code",
+            "rows": 2,
+            "type": "ide",
+            "label": "Code"
+          },
+          {
+            "id": "CODE_RUNNER_VALIDATION_1-input-sideEffects-json",
+            "name": "sideEffects",
+            "rows": 2,
+            "type": "json",
+            "label": "SideEffects"
+          }
+        ],
+        "inputAnchors": [
+          {
+            "id": "CODE_RUNNER_VALIDATION_1-input-xmessage-xMessage",
+            "list": true,
+            "name": "xmessage",
+            "type": "xMessage",
+            "label": "XMessage"
+          }
+        ],
+        "outputAnchors": [
+          {
+            "id": "CODE_RUNNER_VALIDATION_1-output-onSuccess-xMessage",
+            "name": "onSuccess",
+            "type": "xMessage",
+            "label": "On Success"
+          },
+          {
+            "id": "CODE_RUNNER_VALIDATION_1-output-onError-xMessage",
+            "name": "onError",
+            "type": "xMessage",
+            "label": "On Error"
+          }
+        ]
+      },
+      "type": "customNode",
+      "width": 300,
+      "height": 569,
+      "dragging": false,
+      "position": {
+        "x": 3255.789032183661,
+        "y": -141.0959960862705
+      },
+      "selected": false,
+      "positionAbsolute": {
+        "x": 3255.789032183661,
+        "y": -141.0959960862705
+      },
+      "style": {}
+    }
+  ],
+  "edges": [
+    {
+      "id": "CODE_RUNNER_isVISIBLE_0-CODE_RUNNER_ASK_0",
+      "data": {
+        "label": ""
+      },
+      "type": "buttonedge",
+      "source": "CODE_RUNNER_isVISIBLE_0",
+      "target": "CODE_RUNNER_ASK_0",
+      "sourceHandle": "CODE_RUNNER_isVISIBLE_0-output-onSuccess-xMessage",
+      "targetHandle": "CODE_RUNNER_ASK_0-input-xmessage-xMessage"
+    },
+    {
+      "id": "CODE_RUNNER_ASK_0-USER_FEEDBACK_LOOP_0",
+      "data": {
+        "label": ""
+      },
+      "type": "buttonedge",
+      "source": "CODE_RUNNER_ASK_0",
+      "target": "USER_FEEDBACK_LOOP_0",
+      "sourceHandle": "CODE_RUNNER_ASK_0-output-onSuccess-xMessage",
+      "targetHandle": "USER_FEEDBACK_LOOP_0-input-xmessage-xMessage"
+    },
+    {
+      "id": "USER_FEEDBACK_LOOP_0-CODE_RUNNER_RUN_VALIDATOR_0",
+      "data": {
+        "label": ""
+      },
+      "type": "buttonedge",
+      "source": "USER_FEEDBACK_LOOP_0",
+      "target": "CODE_RUNNER_RUN_VALIDATOR_0",
+      "sourceHandle": "USER_FEEDBACK_LOOP_0-output-restoreState-xMessage",
+      "targetHandle": "CODE_RUNNER_RUN_VALIDATOR_0-input-xmessage-xMessage"
+    },
+    {
+      "id": "CODE_RUNNER_RUN_VALIDATOR_0-CODE_RUNNER_STORE_0",
+      "data": {
+        "label": ""
+      },
+      "type": "buttonedge",
+      "source": "CODE_RUNNER_RUN_VALIDATOR_0",
+      "target": "CODE_RUNNER_STORE_0",
+      "sourceHandle": "CODE_RUNNER_RUN_VALIDATOR_0-output-onSuccess-xMessage",
+      "targetHandle": "CODE_RUNNER_STORE_0-input-xmessage-xMessage"
+    },
+    {
+      "id": "CODE_RUNNER_STORE_0-CODE_RUNNER_VALIDATION_0",
+      "data": {
+        "label": ""
+      },
+      "type": "buttonedge",
+      "source": "CODE_RUNNER_STORE_0",
+      "target": "CODE_RUNNER_VALIDATION_0",
+      "sourceHandle": "CODE_RUNNER_STORE_0-output-onError-xMessage",
+      "targetHandle": "CODE_RUNNER_VALIDATION_0-input-xmessage-xMessage"
+    },
+    {
+      "id": "CODE_RUNNER_VALIDATION_0-USER_FEEDBACK_LOOP_0",
+      "data": {
+        "label": ""
+      },
+      "type": "buttonedge",
+      "source": "CODE_RUNNER_VALIDATION_0",
+      "target": "USER_FEEDBACK_LOOP_0",
+      "sourceHandle": "CODE_RUNNER_VALIDATION_0-output-onSuccess-xMessage",
+      "targetHandle": "USER_FEEDBACK_LOOP_0-input-xmessage-xMessage"
+    },
+    {
+      "id": "CODE_RUNNER_isVISIBLE_1-CODE_RUNNER_ASK_1",
+      "data": {
+        "label": ""
+      },
+      "type": "buttonedge",
+      "source": "CODE_RUNNER_isVISIBLE_1",
+      "target": "CODE_RUNNER_ASK_1",
+      "sourceHandle": "CODE_RUNNER_isVISIBLE_1-output-onSuccess-xMessage",
+      "targetHandle": "CODE_RUNNER_ASK_1-input-xmessage-xMessage"
+    },
+    {
+      "id": "CODE_RUNNER_ASK_1-USER_FEEDBACK_LOOP_1",
+      "data": {
+        "label": ""
+      },
+      "type": "buttonedge",
+      "source": "CODE_RUNNER_ASK_1",
+      "target": "USER_FEEDBACK_LOOP_1",
+      "sourceHandle": "CODE_RUNNER_ASK_1-output-onSuccess-xMessage",
+      "targetHandle": "USER_FEEDBACK_LOOP_1-input-xmessage-xMessage"
+    },
+    {
+      "id": "USER_FEEDBACK_LOOP_1-CODE_RUNNER_RUN_VALIDATOR_1",
+      "data": {
+        "label": ""
+      },
+      "type": "buttonedge",
+      "source": "USER_FEEDBACK_LOOP_1",
+      "target": "CODE_RUNNER_RUN_VALIDATOR_1",
+      "sourceHandle": "USER_FEEDBACK_LOOP_1-output-restoreState-xMessage",
+      "targetHandle": "CODE_RUNNER_RUN_VALIDATOR_1-input-xmessage-xMessage"
+    },
+    {
+      "id": "CODE_RUNNER_RUN_VALIDATOR_1-CODE_RUNNER_STORE_1",
+      "data": {
+        "label": ""
+      },
+      "type": "buttonedge",
+      "source": "CODE_RUNNER_RUN_VALIDATOR_1",
+      "target": "CODE_RUNNER_STORE_1",
+      "sourceHandle": "CODE_RUNNER_RUN_VALIDATOR_1-output-onSuccess-xMessage",
+      "targetHandle": "CODE_RUNNER_STORE_1-input-xmessage-xMessage"
+    },
+    {
+      "id": "CODE_RUNNER_STORE_1-CODE_RUNNER_VALIDATION_1",
+      "data": {
+        "label": ""
+      },
+      "type": "buttonedge",
+      "source": "CODE_RUNNER_STORE_1",
+      "target": "CODE_RUNNER_VALIDATION_1",
+      "sourceHandle": "CODE_RUNNER_STORE_1-output-onError-xMessage",
+      "targetHandle": "CODE_RUNNER_VALIDATION_1-input-xmessage-xMessage"
+    },
+    {
+      "id": "CODE_RUNNER_VALIDATION_1-USER_FEEDBACK_LOOP_1",
+      "data": {
+        "label": ""
+      },
+      "type": "buttonedge",
+      "source": "CODE_RUNNER_VALIDATION_1",
+      "target": "USER_FEEDBACK_LOOP_1",
+      "sourceHandle": "CODE_RUNNER_VALIDATION_1-output-onSuccess-xMessage",
+      "targetHandle": "USER_FEEDBACK_LOOP_1-input-xmessage-xMessage"
+    },
+    {
+      "id": "start-CODE_RUNNER_isVISIBLE_0",
+      "data": {
+        "label": ""
+      },
+      "type": "buttonedge",
+      "source": "start",
+      "target": "CODE_RUNNER_isVISIBLE_0",
+      "sourceHandle": "start-output-startPointer-xMessage",
+      "targetHandle": "CODE_RUNNER_isVISIBLE_0-input-xmessage-xMessage"
+    },
+    {
+      "id": "CODE_RUNNER_isVISIBLE_0-CODE_RUNNER_isVISIBLE_1",
+      "data": {
+        "label": ""
+      },
+      "type": "buttonedge",
+      "source": "CODE_RUNNER_isVISIBLE_0",
+      "target": "CODE_RUNNER_isVISIBLE_1",
+      "sourceHandle": "CODE_RUNNER_isVISIBLE_0-output-onError-xMessage",
+      "targetHandle": "CODE_RUNNER_isVISIBLE_1-input-xmessage-xMessage"
+    },
+    {
+      "id": "CODE_RUNNER_STORE_0-CODE_RUNNER_isVISIBLE_1",
+      "data": {
+        "label": ""
+      },
+      "type": "buttonedge",
+      "source": "CODE_RUNNER_STORE_0",
+      "target": "CODE_RUNNER_isVISIBLE_1",
+      "sourceHandle": "CODE_RUNNER_STORE_0-output-onSuccess-xMessage",
+      "targetHandle": "CODE_RUNNER_isVISIBLE_1-input-xmessage-xMessage"
+    },
+    {
+      "id": "CODE_RUNNER_isVISIBLE_1-CODE_RUNNER_END",
+      "data": {
+        "label": ""
+      },
+      "type": "buttonedge",
+      "source": "CODE_RUNNER_isVISIBLE_1",
+      "target": "CODE_RUNNER_END",
+      "sourceHandle": "CODE_RUNNER_isVISIBLE_1-output-onError-xMessage",
+      "targetHandle": "CODE_RUNNER_END-input-xmessage-xMessage"
+    },
+    {
+      "id": "CODE_RUNNER_STORE_1-CODE_RUNNER_END",
+      "data": {
+        "label": ""
+      },
+      "type": "buttonedge",
+      "source": "CODE_RUNNER_STORE_1",
+      "target": "CODE_RUNNER_END",
+      "sourceHandle": "CODE_RUNNER_STORE_1-output-onSuccess-xMessage",
+      "targetHandle": "CODE_RUNNER_END-input-xmessage-xMessage"
+    }
+  ],
+  "viewport": {
+    "x": -89.25227931693917,
+    "y": 282.4605317435965,
+    "zoom": 0.4464677076656672
+  },
+  "name": ""
+}

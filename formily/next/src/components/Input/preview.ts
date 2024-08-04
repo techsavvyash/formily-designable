@@ -44,19 +44,19 @@ Input.Resource = createResource(
         },
       },
     ],
-  },
-  {
-    icon: 'TextAreaSource',
-    elements: [
-      {
-        componentName: 'Field',
-        props: {
-          type: 'string',
-          title: 'TextArea',
-          'x-decorator': 'FormItem',
-          'x-component': 'Input.TextArea',
-        },
-      },
-    ],
   }
+  // {
+  //   icon: 'TextAreaSource',
+  //   elements: [
+  //     {
+  //       componentName: 'Field',
+  //       props: {
+  //         type: 'string',
+  //         title: 'TextArea',
+  //         'x-decorator': 'FormItem',
+  //         'x-component': 'Input.TextArea',
+  //       },
+  //     },
+  //   ],
+  // }
 )

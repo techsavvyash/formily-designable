@@ -46,6 +46,9 @@ export default {
     new MonacoPlugin({
       languages: ['json'],
     }),
+    new webpack.DefinePlugin({
+      'process.env.OPENAI_API': JSON.stringify(process.env.OPENAI_API),
+    }),
     // new BundleAnalyzerPlugin()
   ],
   devServer: {

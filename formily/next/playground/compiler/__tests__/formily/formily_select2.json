@@ -1,0 +1,58 @@
+{
+  "form": {
+    "labelCol": 6,
+    "wrapperCol": 12
+  },
+  "schema": {
+    "type": "object",
+    "properties": {
+      "62q7t4xz4kk": {
+        "title": "Class",
+        "x-decorator": "FormItem",
+        "x-component": "Select",
+        "x-validator": [],
+        "x-component-props": {},
+        "x-decorator-props": {},
+        "enum": [
+          {
+            "children": [],
+            "value": "class-1-key",
+            "label": "Class 1"
+          },
+          {
+            "children": [],
+            "value": "class-2-key",
+            "label": "Class 2"
+          }
+        ],
+        "x-designable-id": "62q7t4xz4kk",
+        "x-index": 0,
+        "description": "Select Your Class"
+      },
+      "kopukmb7qkz": {
+        "title": "Sport",
+        "x-decorator": "FormItem",
+        "x-component": "Select",
+        "x-validator": [],
+        "x-component-props": {},
+        "x-decorator-props": {},
+        "description": "Select your Favourite Sport",
+        "enum": [
+          {
+            "children": [],
+            "label": "Cricket",
+            "value": "s5ukwcjdl5q"
+          },
+          {
+            "children": [],
+            "label": "Football",
+            "value": "lwhu2kl7ska"
+          }
+        ],
+        "x-designable-id": "kopukmb7qkz",
+        "x-index": 1
+      }
+    },
+    "x-designable-id": "66113zcg0s6"
+  }
+}

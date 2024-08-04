@@ -1,0 +1,167 @@
+{
+    "form": {
+      "labelCol": 6,
+      "wrapperCol": 12
+    },
+    "schema": {
+      "type": "object",
+      "properties": {
+        "mnaoe2gqapm": {
+          "type": "string",
+          "title": "Name",
+          "x-decorator": "FormItem",
+          "x-component": "Input",
+          "x-validator": [
+            "llm"
+          ],
+          "x-component-props": {},
+          "x-decorator-props": {},
+          "required": true,
+          "description": "What is your name?",
+          "x-designable-id": "mnaoe2gqapm",
+          "x-index": 0
+        },
+        "Item": {
+          "title": "Select Item",
+          "x-decorator": "FormItem",
+          "x-component": "Select",
+          "x-validator": [],
+          "x-component-props": {},
+          "x-decorator-props": {},
+          "enum": [
+            {
+              "children": [],
+              "label": "Item 1",
+              "value": "I1"
+            },
+            {
+              "children": [],
+              "label": "Item 2",
+              "value": "I2"
+            }
+          ],
+          "x-designable-id": "f7ssh3r4zrz",
+          "x-index": 1,
+          "name": "Item",
+          "description": "Select Item",
+          "x-display": "visible"
+        },
+        "m9m5gkcuf3s": {
+          "title": "Select 2",
+          "x-decorator": "FormItem",
+          "x-component": "Select",
+          "x-validator": [],
+          "x-component-props": {},
+          "x-decorator-props": {},
+          "enum": [
+            {
+              "children": [],
+              "label": "Class 1",
+              "value": "Class 1"
+            },
+            {
+              "children": [],
+              "label": "Class 2",
+              "value": "Class 2"
+            }
+          ],
+          "x-designable-id": "m9m5gkcuf3s",
+          "x-index": 2,
+          "description": "Select Class"
+        },
+        "iu4c4pioz6r": {
+          "type": "string",
+          "title": "Input",
+          "x-decorator": "FormItem",
+          "x-component": "Input",
+          "x-validator": [],
+          "x-component-props": {},
+          "x-decorator-props": {},
+          "enum": [],
+          "x-reactions": {
+            "dependencies": [
+              {
+                "property": "value",
+                "type": "any",
+                "source": "Item",
+                "name": "v_ef781vv5r3v"
+              },
+              {
+                "property": "value",
+                "type": "any",
+                "source": "m9m5gkcuf3s",
+                "name": "v_9bdqtfzwmd7"
+              }
+            ],
+            "fulfill": {
+              "state": {
+                "visible": "{{$deps.v_ef781vv5r3v == \"I1\"\r\n&&\r\n$deps.v_9bdqtfzwmd7 == \"Class 1\"}}"
+              }
+            }
+          },
+          "x-designable-id": "iu4c4pioz6r",
+          "x-index": 3,
+          "description": "Input for Item 1 and Class 1"
+        },
+        "4h8ww0pk8xx": {
+          "type": "string",
+          "title": "Input ",
+          "x-decorator": "FormItem",
+          "x-component": "Input",
+          "x-validator": [
+            "number"
+          ],
+          "x-component-props": {},
+          "x-decorator-props": {},
+          "x-reactions": {
+            "dependencies": [
+              {
+                "property": "value",
+                "type": "any",
+                "source": "Item",
+                "name": "v_5phegathwmt"
+              }
+            ],
+            "fulfill": {
+              "state": {
+                "visible": "{{$deps.v_5phegathwmt == \"I2\"}}"
+              }
+            }
+          },
+          "x-designable-id": "4h8ww0pk8xx",
+          "x-index": 4,
+          "description": "Input For Item 2 (Number)"
+        },
+        "n743nwese30": {
+          "type": "string",
+          "title": "Input 3",
+          "x-decorator": "FormItem",
+          "x-component": "Input",
+          "x-validator": [
+            "email"
+          ],
+          "x-component-props": {},
+          "x-decorator-props": {},
+          "x-designable-id": "n743nwese30",
+          "x-index": 5,
+          "x-reactions": {
+            "dependencies": [
+              {
+                "property": "value",
+                "type": "any",
+                "source": "m9m5gkcuf3s",
+                "name": "v_3cevzt85c79"
+              }
+            ],
+            "fulfill": {
+              "state": {
+                "visible": "{{(function(){\r\n if($deps.v_3cevzt85c79 == \"Class 2\") \r\n return true;\r\n return false;\r\n})()}}"
+              }
+            }
+          },
+          "description": "Input For Class 2 (Email)"
+        }
+      },
+      "x-designable-id": "x59x64pjnuv"
+    }
+  }
