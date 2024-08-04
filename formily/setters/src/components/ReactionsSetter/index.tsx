@@ -17,7 +17,7 @@ import {
 import { Modal, Card, Button, Tag, Tooltip } from 'antd'
 import { PathSelector } from './PathSelector'
 import { FieldPropertySetter } from './FieldPropertySetter'
-import { FulfillRunHelper } from './helpers'
+// import { FulfillRunHelper } from './helpers'
 import { IReaction } from './types'
 import { initDeclaration } from './declarations'
 import './styles.less'
@@ -389,7 +389,7 @@ export const ReactionsSetter: React.FC<IReactionsSetterProps> = (props) => {
                       x-component="FieldPropertySetter"
                     />
                   </SchemaField.Void>
-                  <SchemaField.Void
+                  {/* <SchemaField.Void
                     x-component="FormCollapse.CollapsePanel"
                     x-component-props={{
                       key: 'run',
@@ -427,7 +427,7 @@ export const ReactionsSetter: React.FC<IReactionsSetterProps> = (props) => {
                         }
                       }}
                     />
-                  </SchemaField.Void>
+                  </SchemaField.Void> */}
                 </SchemaField.Void>
               </SchemaField>
             </Form>

@@ -109,19 +109,19 @@ export const createFieldSchema = (
               defaultValue: 'visible',
             },
           },
-          'x-pattern': {
-            type: 'string',
-            enum: ['editable', 'disabled', 'readOnly', 'readPretty', ''],
-            'x-decorator': 'FormItem',
-            'x-component': 'Select',
-            'x-component-props': {
-              defaultValue: 'editable',
-            },
-          },
-          default: {
-            'x-decorator': 'FormItem',
-            'x-component': 'ValueInput',
-          },
+          // 'x-pattern': {
+          //   type: 'string',
+          //   enum: ['editable', 'disabled', 'readOnly', 'readPretty', ''],
+          //   'x-decorator': 'FormItem',
+          //   'x-component': 'Select',
+          //   'x-component-props': {
+          //     defaultValue: 'editable',
+          //   },
+          // },
+          // default: {
+          //   'x-decorator': 'FormItem',
+          //   'x-component': 'ValueInput',
+          // },
           enum: {
             'x-decorator': 'FormItem',
             'x-component': DataSourceSetter,
@@ -141,7 +141,7 @@ export const createFieldSchema = (
           },
         },
       },
-      ...createComponentSchema(component, decorator),
+      // ...createComponentSchema(component, decorator),
     },
   }
 }

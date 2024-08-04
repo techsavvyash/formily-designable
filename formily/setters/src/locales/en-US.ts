@@ -9,6 +9,7 @@ const ValidatorFormats = [
   { label: 'Chinese', value: 'zh' },
   { label: 'Date', value: 'date' },
   { label: 'Zip', value: 'zip' },
+  { label: 'LLM', value: 'llm' },
 ]
 
 export default {
