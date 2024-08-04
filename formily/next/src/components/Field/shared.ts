@@ -141,7 +141,7 @@ export const createFieldSchema = (
           },
         },
       },
-      ...createComponentSchema(component, decorator),
+      // ...createComponentSchema(component, decorator),
     },
   }
 }
